@@ -1,0 +1,110 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base",
+        "plugin:jest/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "eslint-plugin-import-helpers"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+        "no-console": 2,
+        "class-methods-use-this": [
+            "off",
+            {
+                "exceptMethods": [
+                    "no this"
+                ]
+            }
+        ],
+        "semi": [
+            "error",
+            "never"
+        ],
+        "import/prefer-default-export": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "next"
+            }
+        ],
+        "no-unused-expressions": [
+            "error",
+            {
+                "allowShortCircuit": true,
+                "allowTernary": true
+            }
+        ],
+        "arrow-parens": [
+            "error",
+            "as-needed"
+        ],
+        "no-underscore-dangle": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 120
+            }
+        ],
+        "import/no-cycle": [
+            2,
+            {
+                "maxDepth": 1
+            }
+        ],
+        "no-param-reassign": "off",
+        "no-return-assign": "off",
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": {
+                    "multiline": true,
+                    "minProperties": 6
+                },
+                "ObjectPattern": {
+                    "multiline": true,
+                    "minProperties": 6
+                },
+                "ImportDeclaration": {
+                    "multiline": true,
+                    "minProperties": 6
+                },
+                "ExportDeclaration": {
+                    "multiline": true,
+                    "minProperties": 6
+                }
+            }
+        ],
+        "import-helpers/order-imports": [
+            "warn",
+            {
+                "newlinesBetween": "always",
+                "groups": [
+                    "module",
+                    "/^~/",
+                    [
+                        "parent",
+                        "sibling",
+                        "index"
+                    ]
+                ],
+                "alphabetize": {
+                    "order": "asc",
+                    "ignoreCase": true
+                }
+            }
+        ]
+    }
+}
