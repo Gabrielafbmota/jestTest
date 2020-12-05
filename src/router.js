@@ -2,6 +2,9 @@ import express from 'express'
 
 import { createLogger } from './libs/logger'
 
+import login from './controllers/login'
+import users from './controllers/users'
+
 const router = express.Router()
 
 const logger = createLogger('route')
@@ -26,7 +29,7 @@ function generateRoutes(endpoints, routeOpened = false) {
 }
 
 const initialRoutes = []
-const endpoints = initialRoutes.concat()
+const endpoints = initialRoutes.concat(users, login)
 
 generateRoutes(endpoints, true)
 
