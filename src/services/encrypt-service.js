@@ -1,5 +1,9 @@
-import argon2 from 'argon2'
+import bcrypt from 'bcryptjs'
 
-export default function encrypt(password) {
-  return argon2.hash(password)
+export function encrypt(password) {
+  return bcrypt.hashSync(password)
+}
+
+export function decrypt(password, currentPassword) {
+  return bcrypt.compareSync(password, currentPassword)
 }

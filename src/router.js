@@ -3,7 +3,8 @@ import express from 'express'
 import { createLogger } from './libs/logger'
 
 import login from './controllers/login'
-import users from './controllers/users'
+import signup from './controllers/signup'
+import user from './controllers/user'
 
 const router = express.Router()
 
@@ -29,7 +30,7 @@ function generateRoutes(endpoints, routeOpened = false) {
 }
 
 const initialRoutes = []
-const endpoints = initialRoutes.concat(users, login)
+const endpoints = initialRoutes.concat(user, login, signup)
 
 generateRoutes(endpoints, true)
 
