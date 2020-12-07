@@ -1,15 +1,11 @@
-import * as user from './controller'
+import { index } from './controller'
+import auth from '../../middlewares/authentication'
 
 export default [
   {
-    method:'get',
-    path:'/user',
-    action: user.index
+    method: 'get',
+    path: '/user',
+    action: index,
+    handlers: [auth],
   },
-  {
-    method:'post',
-    path:'/user',
-    action: user.store
-  },
-
 ]

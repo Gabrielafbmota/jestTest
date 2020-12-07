@@ -1,4 +1,4 @@
-import * as UserRepositorie from '../../repositories/user'
+import * as UserRepositorie from '../../repositories/users'
 
 export async function store(req, res) {
   try {
